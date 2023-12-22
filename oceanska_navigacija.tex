@@ -1,0 +1,272 @@
+% **********************************************************************
+% Copyright 2020 Aleksander GRM
+
+% Author: Aleksander GRM @fpp.uni-lj.si
+% Description: This is an unofficial book tmplate I made from scratch. 
+%              Feel free to use it, modify it, share it.
+% Version: 1.0
+% Date: 02/12/2020
+% **********************************************************************
+
+
+% ******************
+% *** page style ***
+%
+\documentclass[10pt,twosided]{book}
+%
+% ******************
+
+
+% ******************************************
+% *** hyper references must be set first ***
+% ******************************************
+%
+% *** choose a correct version with used compiler ***
+%
+%\usepackage[dvips]{hyperref}  % latex + dvips + ps2pdf
+%\usepackage[pdftex]{hyperref} % pdflatex
+\usepackage[xetex]{hyperref}   % xelatex (default)
+\hypersetup{
+	colorlinks = true,
+	linkcolor = {red!50!black},
+	citecolor = {blue!50!black},
+	urlcolor = {blue!80!black}
+}
+
+
+% ********************************************************
+% *** Compile with xelatex requires UTF-8 file format! ***
+% ********************************************************
+% 
+% *** UTF-8 coding
+% 
+% Comment if copiled with xelatex, unless uncomment for pdflatex!
+%
+%\usepackage[utf8x]{inputenc} % needed for pdflatex
+
+
+% ************************
+% *** Language support ***
+% ************************
+%
+\usepackage[slovene]{babel}
+%\usepackage[english]{babel}
+% ************************
+
+
+% *** show labels ***
+% \usepackage{showlabels}
+
+% *********************
+% *** Paper margins ***
+% *********************
+%
+\usepackage{geometry}
+\geometry{
+	paperwidth=160mm,
+	paperheight=225mm,
+	left=25mm,
+	width=115mm,
+	top=25mm,
+	height=180mm
+}
+%
+% *** Crop marks ***
+%
+%\usepackage[a4,frame,center]{crop}
+\usepackage[a4,cam,center]{crop}
+
+%
+% *** Fancy chapter/section look ***
+%
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Bjornstrup]{fncychap}
+%
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\sffamily\Large\bfseries}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\sffamily\large\bfseries}
+{\thesubsection}{1em}{}
+
+
+%
+% *** include packages ***
+%
+\usepackage[numbers]{natbib}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{empheq, nccmath}
+\usepackage[many]{tcolorbox}
+\usepackage{siunitx}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+%
+% registered - \textregistered
+% copyright  - \textcopyright
+\usepackage{textcomp}
+
+%
+\usepackage[all,knot]{xy}
+\xyoption{arc}
+\usepackage{multimedia}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{xfrac}
+\usepackage{cancel}
+
+%
+% *** Drawing tools ***
+%
+\usepackage{tikz}
+\usetikzlibrary{shadings}
+\usetikzlibrary{calc} 
+
+%
+% *** Matlab
+\usepackage[framed,numbered]{matlab-prettifier}
+
+%
+% *** Caption to be bold face ***
+%
+\usepackage{caption}
+\captionsetup[figure]{labelfont=bf}
+
+
+%
+% *** Numbered environment ***
+%
+%\newenvironment{naloga}[1][]{\noindent \textbf{Naloga} }{\medskip}
+\newenvironment{primer}[1][]{\noindent \textbf{Primer.}  }{\medskip}
+\newenvironment{resitev}[1][]{\noindent \textbf{Rešitev.}  }{\medskip}
+
+%
+% *** Examples ***
+%
+\theoremstyle{definition}
+\newtheorem{exmp}{}[section]
+\newtheorem{naloga}{Naloga}[section]
+
+
+%
+% *** Fancy header ***
+%
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}  
+%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\itshape\nouppercase\leftmark}
+\fancyhead[RE]{\textsc{A.Grm}\copyright2022}
+\fancyhead[RO]{\itshape\nouppercase\rightmark}
+\fancyhead[LO]{\textsc{A.Grm}\copyright2022}
+\chead{}
+\cfoot{\thepage}
+
+% ********************************
+% *** Additional notations.tex ***
+% ********************************
+%
+\include{notations}
+%
+% *********************
+
+%\AtBeginShipout
+%{
+%	\begin{tikzpicture}[remember picture,overlay]
+%		\node [rectangle, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+%	\end{tikzpicture}
+%}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
+\pagestyle{empty}
+
+    \begin{center}
+	    \includegraphics[height=5cm]{fpp_logo_vertical_slo_red.pdf}\\[3cm]
+	    
+		\rule{\linewidth}{1 mm} \\[7mm]
+		{ \huge \bfseries Oceanska navigacija}\\[4mm]
+		\rule{\linewidth}{1 mm} \\[3cm]
+		
+		{\large \textsc{Aleksander Sandro GRM} }\\[2mm]
+		{\large \textsc{Tanja BRCKO SATLER} }
+		
+		\vspace{3cm}
+		2022, 1. izdaja
+		
+	\end{center}
+
+\clearpage
+~
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}
+
+\tableofcontents
+
+% ***********************************
+\newpage
+\chapter*{Povzetek}
+
+Pričujoča knjiga je namenjena predvsem študentom pomorske smeri na Fakulteti za pomorstvo in promet, Univerze v Ljubljani. Hkrati pa vabi vse zanesenjake, ki jih zanima klasičen način določanja položaja na odprtem morju. Knjiga je vsebinsko podana na način, da se lahko vsakdo, ki ima nekaj predznanja matematike, fizike in astronomije, sam priuči opisanih metod določevanja položaja. Kar potrebuje, je le sekstant, podatke o nebesnih telesih, žepni računalnik, pričujočo knjigo in dobro voljo.
+
+Mogoče bi še kdo ob teh besedah pripomnil, da je danes v uporabi satelitska navigacija in se metode klasične Oceanske navigacije na ladjah trgovske mornarice ne uporabljajo več. Tudi to bo držalo, vendar ne v celoti. Bistvo STCW usposabljanja \cite{cfd_ferziger_peric} temelji tudi na avtonomnosti navigacijskih načel in principov, kjer je poglavje oceanske navigacije pomemben del STCW vsebin. Tako morajo vsi pomorščaki še vedno znati določiti položaj na odprtem morju z uporabo klasičnih metod, kot so avtonomni sistemi navigacije brez napajanja. Popolnoma jasno je tudi zakaj mora biti tako. V današnjem času se vse bolj dogaja, da se položaj določen s pomočjo satelitov moti in je kot takšen nezanesljiv, vendar izjemno natančen. Kombinacija obeh sistemov prinaša zanesljivost in hkrati natančnost, ter tako izpolnjuje osnovna načela SOLAS konvencije.
+
+Vsebina knjige se podaja po poti praktične navigacije, kakor jo je zasnoval kapitan \textit{Nathaniel
+Bowditch} v svoji knjigi \textit{American Practical Navigator} \cite{cfd_ferziger_peric}. Načelo kapitana Bowditch je: \textit{"Vsak pomorščak se lahko nauči in priuči osnovnih principov navigacije."} Za izpolnitev take ideje, potrebujejo pomorščaki kvalitetno literaturo. Osnovna literatura mora vsebovati teoretično podlago, kjer lahko bralec sledi poti razvoja od osnovnih principov do uporabne forme, ki je nato podlaga praktičnega pomorskega usposabljanja.
+
+\vspace{2mm}
+\begin{flushright}
+	-- Aleksander Sandro GRM --\\[2mm]
+	-- Tanja BRCKO SATLER --\\[2mm]
+	-- September, 2023 --
+\end{flushright}  
+\clearpage
+~
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{01_uvod/01_uvod.tex}
+
+\newpage
+\include{02_st/02_st.tex}
+
+\newpage
+\include{03_lo/03_lo.tex}
+
+\newpage
+\include{04_an/04_an.tex}
+
+\newpage
+\include{05_cm/05_cm.tex}
+
+\newpage
+\include{06_appendix/06_appendix.tex}
+
+
+% *** References ***
+\newpage
+
+% using natbib package: plainnat, unsrtnat, abbrevnat
+\bibliographystyle{plainnat}
+\bibliography{literature_db}
+
+\end{document}
+
+
+
